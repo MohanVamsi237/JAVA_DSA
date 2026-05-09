@@ -8,7 +8,7 @@ public class single {
         this.size = 0;
     }
 
-    class Node {
+    class Node {    
         String data;
         Node next;
 

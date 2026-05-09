@@ -13,6 +13,7 @@ class coll_SLL{
         System.out.println(list);  
 
         System.out.println(list.size());
+
         for(int i=0;i<list.size();i++){
             System.out.print(list.get(i)+" -> ");
         }
@@ -25,7 +26,7 @@ class coll_SLL{
         System.out.println(list);
         list.remove("is");
         System.out.println(list);
-        list.remove();
+        list.remove();                           // same as removeFirst if no element specified
         System.out.println(list);
     }
 }
