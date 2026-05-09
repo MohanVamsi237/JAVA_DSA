@@ -23,5 +23,9 @@ class coll_SLL{
 
         list.removeLast();
         System.out.println(list);
+        list.remove("is");
+        System.out.println(list);
+        list.remove();
+        System.out.println(list);
     }
 }
