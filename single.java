@@ -1,6 +1,7 @@
 package linkedlist;
 
 public class single {
+
     Node head;
     private int size;
 
@@ -8,7 +9,7 @@ public class single {
         this.size = 0;
     }
 
-    class Node {    
+    class Node {
         String data;
         Node next;
 
@@ -20,6 +21,7 @@ public class single {
     }
 
     public void addFirst(String data) {
+
         Node newNode = new Node(data);
 
         if (head == null) {
@@ -32,6 +34,7 @@ public class single {
     }
 
     public void addLast(String data) {
+
         Node newNode = new Node(data);
 
         if (head == null) {
@@ -49,24 +52,48 @@ public class single {
     }
 
     public void printList() {
+
         if (head == null) {
-            System.out.println("list is empty");
+            System.out.println("List is empty");
             return;
         }
 
         Node currNode = head;
 
         while (currNode != null) {
-            System.out.print(currNode.data + "->");
+            System.out.print(currNode.data + " -> ");
             currNode = currNode.next;
         }
 
         System.out.println("NULL");
     }
 
+    public void reverseList() {
+
+        if (head == null || head.next == null) {
+            return;
+        }
+
+        Node prev = null;
+        Node curr = head;
+
+        while (curr != null) {
+
+            Node next = curr.next;
+
+            curr.next = prev;
+
+            prev = curr;
+            curr = next;
+        }
+
+        head = prev;
+    }
+
     public void deleteFirst() {
+
         if (head == null) {
-            System.out.println("This list is empty");
+            System.out.println("List is empty");
             return;
         }
 
@@ -75,8 +102,9 @@ public class single {
     }
 
     public void deleteLast() {
+
         if (head == null) {
-            System.out.println("this list is empty");
+            System.out.println("List is empty");
             return;
         }
 
@@ -91,8 +119,8 @@ public class single {
         Node lastNode = head.next;
 
         while (lastNode.next != null) {
-            lastNode = lastNode.next;
             secondLast = secondLast.next;
+            lastNode = lastNode.next;
         }
 
         secondLast.next = null;
@@ -103,24 +131,21 @@ public class single {
     }
 
     public static void main(String[] args) {
+
         single list = new single();
 
-        list.addFirst("a");
-        list.addFirst("is");
+        list.addLast("1");
+        list.addLast("2");
+        list.addLast("3");
+        list.addLast("4");
+        list.addLast("5");
+
+        System.out.println("Original List:");
         list.printList();
 
-        list.addLast("list");
-        list.printList();
+        list.reverseList();
 
-        list.addFirst("this");
+        System.out.println("Reversed List:");
         list.printList();
-
-        list.deleteFirst();
-        list.printList();
-
-        list.deleteLast();
-        list.printList();
-
-        System.out.println(list.getsize());
     }
 }
