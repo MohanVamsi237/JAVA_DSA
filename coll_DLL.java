@@ -1,6 +1,6 @@
 package linkedlist;
 import java.util.*;
-class coll_SLL{
+class coll_DLL{
     public static void main(){
         LinkedList<String> list=new LinkedList<>();
 
