@@ -115,6 +115,17 @@ public class binaryTree {
         return myHeight;
     }
 
+    public static int diameter(Node root){
+        if(root==null){
+            return 0;
+        }
+        int diam1=diameter(root.left);
+        int diam2=diameter(root.right);
+        int diam3=height(root.left)+height(root.right)+1;
+
+        return Math.max(diam3,Math.max(diam1,diam2));
+    }
+
     
     static void main(String[] args) {
         int nodes[] = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
@@ -132,5 +143,6 @@ public class binaryTree {
         System.out.println("Count of nodes: "+countOfNodes(root));
         System.out.println("Sum of nodes: "+sumOfNodes(root));
         System.out.println("Height of tree: "+height(root));
+        System.out.println("Diameter of tree: "+diameter(root));
     }
 }
