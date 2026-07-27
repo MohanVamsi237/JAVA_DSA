@@ -1,4 +1,3 @@
-import java.util.*;
 public class queueinArray{
     static class Queue {
         int arr[];
